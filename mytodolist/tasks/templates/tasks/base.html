@@ -1,0 +1,18 @@
+{# base/index.html #}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'tasks/app.css' %}">
+    <title>tekom</title>
+</head>
+<body>
+
+    {% block page_content %}
+    {% endblock %}
+
+
+</body>
+</html>

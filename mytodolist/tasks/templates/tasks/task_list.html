@@ -1,0 +1,22 @@
+{# tasks/task_list.html #}
+
+{% extends 'tasks/base.html' %}
+
+{% block page_content %}
+    <h1>Tasks - List View.</h1>
+
+    <ul>
+    {% for task in task_list %}
+        <li>
+            <a href="{% url 'details' task_id=task.id%}">
+            {% if task.priority == 5 %}<b>{%endif%}
+            {{task.title}}
+            {% if task.priority == 5 %}</b>{%endif%}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'add' %}">dodaj</a>
+
+{% endblock %}

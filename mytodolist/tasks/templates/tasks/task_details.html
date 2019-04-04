@@ -1,0 +1,12 @@
+{# tasks/task_details.html #}
+
+{% extends 'tasks/base.html' %}
+
+{% block page_content %}
+    <h1>Tasks - Details View ({{task_id}}) {{task.title}}.</h1>
+    <p>opis: {{task.description}}</p>
+<p>prioritet: <b>{{task.get_priority_display}}</b></p>
+    <p>deadline: {{task.deadline}}</p>
+    <p><a href="{% url 'list' %}">back to list</a></p>
+    <p><a href="{% url  'edit' task_id=task_id %}">edit</a></p>
+{% endblock %}

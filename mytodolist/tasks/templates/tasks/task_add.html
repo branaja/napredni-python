@@ -1,0 +1,16 @@
+{# tasks/task_add.html #}
+
+{% extends 'tasks/base.html' %}
+
+{% block page_content %}
+    <h1>Tasks - Add View.</h1>
+
+    <form action="{% url 'add' %}" method="post">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <input type="submit" value="Save">
+    </form>
+
+{% endblock %}
